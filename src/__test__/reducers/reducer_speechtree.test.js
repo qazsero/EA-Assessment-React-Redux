@@ -1,7 +1,7 @@
-import passwordReducer from '../../reducers/passwordReducer'
+import passwordReducer from '../../reducers/speechTreeReducer'
 import * as types from '../../actions/types'
 
-describe('>>>R E D U C E R --- Test passwordReducer',()=>{
+describe('>>>R E D U C E R --- Test speechTreeReducer',()=>{
 
   const initialState = {
     features:[],
@@ -50,7 +50,7 @@ describe('>>>R E D U C E R --- Test passwordReducer',()=>{
   })
 
   it('+++ reducer for ADD_FEATURE', () => {
-    let state = passwordReducer(initialState, {type:types.ADD_FEATURE, featurePayload})
+    let state = passwordReducer(initialState, {type:types.ADD_FEATURE, payload:featurePayload})
     expect(state).toEqual({
       ...initialState,
       features: [featurePayload]
@@ -59,22 +59,22 @@ describe('>>>R E D U C E R --- Test passwordReducer',()=>{
 
   
   it('+++ reducer for REMOVE_FEATURE', () => {
-    let state = passwordReducer(completeState, {type:types.REMOVE_FEATURE, featurePayload})
+    let state = passwordReducer(completeState, {type:types.REMOVE_FEATURE, payload:featurePayload})
     expect(state).toEqual(initialState)
   })
 
   it('+++ reducer for ADD_CONTEXT', () => {
-    let state = passwordReducer(completeState, {type:types.ADD_CONTEXT, contextPayload})
+    let state = passwordReducer(initialState, {type:types.ADD_CONTEXT, payload:contextPayload})
     expect(state).toEqual({
       ...initialState,
-      context: [contextPayload]
+      contexts: [contextPayload]
     })
   })
 
   
   it('+++ reducer for REMOVE_CONTEXT', () => {
 
-    let state = passwordReducer(completeState, {type:types.REMOVE_CONTEXT, contextPayload})
+    let state = passwordReducer(completeState, {type:types.REMOVE_CONTEXT, payload:contextPayload})
     expect(state).toEqual({
       ...completeState,
       contexts:[],
@@ -84,7 +84,7 @@ describe('>>>R E D U C E R --- Test passwordReducer',()=>{
   })
 
   it('+++ reducer for ADD_EVENT', () => {
-    let state = passwordReducer(completeState, {type:types.ADD_EVENT, eventPayload})
+    let state = passwordReducer(initialState, {type:types.ADD_EVENT, payload:eventPayload})
     expect(state).toEqual({
       ...initialState,
       events: [eventPayload]
@@ -94,7 +94,7 @@ describe('>>>R E D U C E R --- Test passwordReducer',()=>{
   
   it('+++ reducer for REMOVE_EVENT', () => {
 
-    let state = passwordReducer(completeState, {type:types.REMOVE_EVENT, eventPayload})
+    let state = passwordReducer(completeState, {type:types.REMOVE_EVENT, payload:eventPayload})
     expect(state).toEqual({
       ...completeState,
       events: [],
@@ -103,17 +103,17 @@ describe('>>>R E D U C E R --- Test passwordReducer',()=>{
   })
 
   it('+++ reducer for ADD_SENTENCE', () => {
-    let state = passwordReducer(completeState, {type:types.ADD_SENTENCE, sentencePayload})
+    let state = passwordReducer(initialState, {type:types.ADD_SENTENCE, payload:sentencePayload})
     expect(state).toEqual({
       ...initialState,
-      features: [featurePayload]
+      sentences: [sentencePayload]
     })
   })
 
   
   it('+++ reducer for REMOVE_SENTENCE', () => {
 
-    let state = passwordReducer(completeState, {type:types.REMOVE_SENTENCE, sentencePayload})
+    let state = passwordReducer(completeState, {type:types.REMOVE_SENTENCE, payload:sentencePayload})
     expect(state).toEqual({
       ...completeState,
       sentences:[]

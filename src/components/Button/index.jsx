@@ -3,7 +3,12 @@ import styles from './Button.module.scss'
 
 
 const Button = props => {
-  let classes = `${styles.button} ${props.className || ''}`
+  let classes = styles.button
+
+  if (props.className) {
+    classes = `${classes} ${props.className}`
+  }
+
   if (props.secondary) {
     classes = `${classes} ${styles.secondary}`
   }
