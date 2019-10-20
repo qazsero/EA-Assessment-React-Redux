@@ -1,0 +1,23 @@
+@import '../../assets/styles/all';
+
+.button{
+    padding: 7px 15px;
+    border:none;
+    border-radius: 4px;
+    background: $ea-orange-1;
+    cursor: pointer;
+    @include ea-body(white);
+    &:hover{
+        background: rgba($ea-orange-1, 0.6);
+    }
+
+    &.secondary{
+        background: transparent;
+        color: $ea-orange-1;
+        &:hover{
+            background: $ea-grey-1;
+        }
+    }
+}
+
+

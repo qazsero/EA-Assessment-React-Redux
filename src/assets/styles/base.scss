@@ -1,0 +1,37 @@
+@import './all';
+
+*{
+    margin:0;
+    padding:0;
+}
+
+html{
+    height: 100%;
+    background: $ea-grey-1;
+}
+
+body{
+    height: 100%;   
+    display: flex;  /*enables flex content for its children*/
+    box-sizing: border-box;
+}
+
+#root{
+    width:100%;
+}
+
+h1{
+    @include ea-h1();
+}
+
+h2{
+    @include ea-h2();
+}
+
+span, p{
+    @include ea-body();
+}
+
+.row{
+    margin-top: 20px;
+}

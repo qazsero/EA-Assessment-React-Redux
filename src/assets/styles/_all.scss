@@ -1,0 +1,86 @@
+/* Font */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+/* Colours */
+$ea-orange-1: #f56c2d;
+$ea-blue-1: #22313c;
+$ea-grey-1: #edf1f2;
+
+
+/* Layout */
+$break-s: 375px;
+$break-sm: 720px;
+$break-md: 992px;
+$break-lg: 1260px;
+@mixin respond-to($media) {
+    @if $media == mobile-screens {
+        @media only screen and (max-width: $break-s) { @content; }
+    }      
+    @else if $media == tablet-screens {
+        @media only screen and (max-width: $break-sm) { @content; }
+    } 
+    @else if $media == small-screens {
+        @media only screen and (max-width: $break-md) { @content; }
+    }
+    @else if $media == medium-screens {
+        @media only screen and (max-width: $break-lg) { @content; }
+    }
+    @else if $media == wide-screens {
+        @media only screen and (min-width: $break-lg) { @content; }
+  }
+}
+
+@mixin ea-container(){
+    margin:auto;
+    @include respond-to(wide-screens) { width:960px; }
+    @include respond-to(medium-screens) { width: 942px; }
+    @include respond-to(small-screens) { width: 90%; }
+    @include respond-to(tablet-screens) { width: 95%; }
+    @include respond-to(mobile-screens) { width:100%; transform: scale(0.90) }
+}
+
+
+/* Text */
+@mixin ea-h1($color:$ea-blue-1, $weight:700){
+    font-family: 'open sans';
+    font-size: 26px;
+    font-weight: $weight;
+    color: $color;
+    @include respond-to(small-screens) { font-size: 24px }
+    @include respond-to(tablet-screens) { font-size: 22px }
+}
+
+@mixin ea-h2($color:$ea-blue-1, $weight:700){
+    font-family: 'open sans';
+    font-size: 24px;
+    font-weight:$weight;
+    color: $color;
+    @include respond-to(small-screens) { font-size: 20px }
+    @include respond-to(tablet-screens) { font-size: 18px }
+
+}
+
+@mixin ea-title($color:$ea-blue-1){
+    font-family: 'open sans';
+    font-size: 15px;
+    font-weight: 700;
+    color: $color;
+    line-height: 2em;
+    @include respond-to(tablet-screens) { font-size: 14px }
+}
+
+@mixin ea-body($color:$ea-blue-1, $weight:400){
+    font-family: 'open sans';
+    font-size: 14px;
+    font-weight: $weight;
+    color: $color;
+    @include respond-to(tablet-screens) { font-size: 12px }
+}
+
+@mixin ea-body-small($color:$ea-blue-1, $weight:400){
+    font-family: 'open sans';
+    font-size: 12px;
+    font-weight:$weight;
+    color: $color;
+    @include respond-to(tablet-screens) { font-size: 10px }
+}

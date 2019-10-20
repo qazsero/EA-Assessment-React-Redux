@@ -1,0 +1,46 @@
+@import '../assets/styles/all';
+
+.navBar{
+    height:100px;
+    background: $ea-blue-1;
+    width:100%;
+    display: flex;
+    justify-content: center;
+
+    .navContainer{
+        @include ea-container();
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        .logoContainer{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            .eaLogo{
+                height:64px;
+                width:64px;
+            }
+            .title{
+                margin-left:40px;
+                @include ea-h2(white);
+            }
+        }
+
+        .nav{
+            ul{
+                list-style: none;
+            }
+            a{
+                @include ea-body(white);
+            }
+        }
+    }
+}
+
+.container{
+    @include ea-container();
+    margin-top: 60px;
+}
