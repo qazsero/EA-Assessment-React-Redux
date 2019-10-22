@@ -36,7 +36,7 @@ const Features = () => {
   )
 }
 
-const FeatureTreeList = props => {
+export const FeatureTreeList = props => {
   const prefix = 'Feature'
   const dispatch = useDispatch()
 

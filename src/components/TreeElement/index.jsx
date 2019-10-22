@@ -27,7 +27,7 @@ const TreeElement = props => {
   )
 }
   
-const AddSection = props => {
+export const AddSection = props => {
   const [input, setInput] = useState('')
 
 
@@ -43,7 +43,7 @@ const AddSection = props => {
   return (
     <div className={styles.addSection}>
       <div><span className={styles.title}>Name </span><input onChange={e => setInput(e.target.value)}  /></div>
-      <div className={styles.buttons}><Button secondary onClick={() => props.showAddSection(false)}>Cancel</Button><Button onClick={() => addAction(input)}>Add</Button></div>
+      <div className={styles.buttons}><Button className="cancel" secondary onClick={() => props.showAddSection(false)}>Cancel</Button><Button className="add" onClick={() => addAction(input)}>Add</Button></div>
     </div>
   )
 }
